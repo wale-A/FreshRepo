@@ -246,6 +246,9 @@
     <EmbeddedResource Include="Forms\MiscCharges.resx">
       <DependentUpon>MiscCharges.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderDeductions.resx">
+      <DependentUpon>OrderDeductions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
