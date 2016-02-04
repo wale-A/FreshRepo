@@ -17,5 +17,10 @@ namespace FirstAppFrameworkApplicationEntities.Forms
         {
             InitializeComponent();
         }
+
+        private void buttonGroup1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
