@@ -192,6 +192,7 @@
     </Compile>
     <Compile Include="Program_Main.cs" />
     <Compile Include="ReportClasses\InvoiceReport.cs" />
+    <Compile Include="ReportClasses\ReceiptReport.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EntityClasses\Customers_Properties.cs">
@@ -263,6 +264,7 @@
     <Content Include="Reports\InvoiceReportContainer.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Reports\ReceiptReport.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\AppFramework.dll" />
