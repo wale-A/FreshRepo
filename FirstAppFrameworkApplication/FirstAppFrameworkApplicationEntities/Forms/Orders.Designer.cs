@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.formDataGridView1 = new AppFramework.Controls.FormDataGridView();
             this.formDataGridView2 = new AppFramework.Controls.FormDataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.runnableFormButton1 = new AppFramework.Controls.RunnableFormButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.runnableFormButton2 = new AppFramework.Controls.RunnableFormButton();
             ((System.ComponentModel.ISupportInitialize)(this.formDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formDataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -50,8 +51,8 @@
             this.formDataGridView1.AllowUserDelete = true;
             this.formDataGridView1.AllowUserToOrderColumns = true;
             this.formDataGridView1.AllowUserUpdate = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            this.formDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
+            this.formDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.formDataGridView1.AssociatedDataGrid = null;
             this.formDataGridView1.AutoFields = true;
             this.formDataGridView1.AutoFieldsGroup = "grid";
@@ -60,14 +61,14 @@
             this.formDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.formDataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.formDataGridView1.Caption = "";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.formDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.formDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.formDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.formDataGridView1.Criteria = "";
             this.formDataGridView1.DiscardUserSettings = false;
@@ -95,8 +96,8 @@
             this.formDataGridView2.AllowUserDelete = true;
             this.formDataGridView2.AllowUserToOrderColumns = true;
             this.formDataGridView2.AllowUserUpdate = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
-            this.formDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            this.formDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.formDataGridView2.AssociatedDataGrid = this.formDataGridView1;
             this.formDataGridView2.AutoFields = true;
             this.formDataGridView2.AutoFieldsGroup = "nonsystem";
@@ -105,14 +106,14 @@
             this.formDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.formDataGridView2.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.formDataGridView2.Caption = "";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.formDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.formDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.formDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.formDataGridView2.Criteria = "";
             this.formDataGridView2.DiscardUserSettings = false;
@@ -136,6 +137,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.runnableFormButton2);
             this.panel1.Controls.Add(this.runnableFormButton1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(458, 27);
@@ -143,25 +145,13 @@
             this.panel1.Size = new System.Drawing.Size(115, 249);
             this.panel1.TabIndex = 3;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.formDataGridView1);
-            this.panel2.Controls.Add(this.formDataGridView2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 27);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(458, 249);
-            this.panel2.TabIndex = 4;
-            // 
             // runnableFormButton1
             // 
             this.runnableFormButton1.AllowAssociatedGridMultiSelect = true;
-            this.runnableFormButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.runnableFormButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.runnableFormButton1.ArgsValueString = null;
             this.runnableFormButton1.AssociatedDataGrid = this.formDataGridView1;
-            this.runnableFormButton1.AutoSize = true;
             this.runnableFormButton1.DiscardUserSettings = false;
             this.runnableFormButton1.EnableEvenIfAssociatedGridIsEmpty = false;
             this.runnableFormButton1.HelpTopic = null;
@@ -180,6 +170,41 @@
             this.runnableFormButton1.Text = "Generate Invoice";
             this.runnableFormButton1.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.formDataGridView1);
+            this.panel2.Controls.Add(this.formDataGridView2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 27);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(458, 249);
+            this.panel2.TabIndex = 4;
+            // 
+            // runnableFormButton2
+            // 
+            this.runnableFormButton2.AllowAssociatedGridMultiSelect = true;
+            this.runnableFormButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.runnableFormButton2.ArgsValueString = null;
+            this.runnableFormButton2.AssociatedDataGrid = null;
+            this.runnableFormButton2.DiscardUserSettings = false;
+            this.runnableFormButton2.EnableEvenIfAssociatedGridIsEmpty = false;
+            this.runnableFormButton2.HelpTopic = null;
+            this.runnableFormButton2.Location = new System.Drawing.Point(4, 33);
+            this.runnableFormButton2.Name = "runnableFormButton2";
+            this.runnableFormButton2.ReloadGridAfter = false;
+            this.runnableFormButton2.ReloadSelectedEntityAfter = true;
+            this.runnableFormButton2.RequiredLicense = "";
+            this.runnableFormButton2.RequiredPermissionLevel = AppFramework.AppClasses.AccessLevel.None;
+            this.runnableFormButton2.RunnableInteractive = true;
+            this.runnableFormButton2.RunnableTypeName = "OrderDeductions";
+            this.runnableFormButton2.RunnableTypeNamespace = "FirstAppFrameworkApplicationEntities.Forms";
+            this.runnableFormButton2.SaveCurrentEntity = true;
+            this.runnableFormButton2.Size = new System.Drawing.Size(107, 25);
+            this.runnableFormButton2.TabIndex = 1;
+            this.runnableFormButton2.Text = "Add Misc. Charges";
+            this.runnableFormButton2.UseVisualStyleBackColor = true;
+            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,7 +219,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.formDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formDataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -208,5 +232,6 @@
         private System.Windows.Forms.Panel panel1;
         private AppFramework.Controls.RunnableFormButton runnableFormButton1;
         private System.Windows.Forms.Panel panel2;
+        private AppFramework.Controls.RunnableFormButton runnableFormButton2;
     }
 }

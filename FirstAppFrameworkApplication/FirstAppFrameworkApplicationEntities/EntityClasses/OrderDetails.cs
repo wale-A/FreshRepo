@@ -147,9 +147,9 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
         private void removeMiscChargesForItem()
         {
             var orderMiscCharge = (from omc in new QueryableEntity<OrderMiscCharges>()
-                       where omc.ItemID == this.ItemID
-                       select omc).ToList();
-            
+                                   where omc.ItemID == this.ItemID
+                                   select omc).ToList();
+
             foreach (var omc in orderMiscCharge)
             {
                 omc.delete();
