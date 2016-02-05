@@ -24,7 +24,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>1.49181in</Top>
-        <Left>2.44722in</Left>
+        <Left>2.82222in</Left>
         <Height>0.25in</Height>
         <Width>0.97486in</Width>
         <Style>
@@ -296,7 +296,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!StaffName.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -326,7 +328,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!OrderID.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -356,7 +360,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Customer.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -422,10 +428,10 @@
               <Width>0.39832in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.75206in</Width>
+              <Width>0.90342in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.79503in</Width>
+              <Width>1.01378in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -609,7 +615,10 @@
                       </Paragraphs>
                       <rd:DefaultName>Textbox15</rd:DefaultName>
                       <Style>
-                        <Border />
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1100,7 +1109,7 @@
         <DataSetName>Items</DataSetName>
         <Top>3.66542in</Top>
         <Height>1in</Height>
-        <Width>3.42209in</Width>
+        <Width>3.7922in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -1129,10 +1138,82 @@
         </Paragraphs>
         <rd:DefaultName>Textbox27</rd:DefaultName>
         <Top>0.02528in</Top>
-        <Left>1.6868in</Left>
+        <Left>2.0618in</Left>
         <Height>1.39708in</Height>
         <Width>1.73528in</Width>
         <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Label>Company</Label>
+                <Value>= Sum(Fields!Amount.Value, "Items")+ Sum(Fields!Amount.Value, "ExtraCharges")</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <Format>'₦' #,0.00;('₦' #,0.00)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>5.8125in</Top>
+        <Left>2.75205in</Left>
+        <Height>0.26215in</Height>
+        <Width>1.04503in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>Orange</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>yo-NG</rd:FormatSymbolCulture>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox8">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Label>Company</Label>
+                <Value>TOTAL : </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>5.8125in</Top>
+        <Left>1.59474in</Left>
+        <Height>0.26215in</Height>
+        <Width>1.12606in</Width>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1156,7 +1237,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Description</Value>
+                            <Value>Misc. Charge(s)</Value>
                             <Style>
                               <FontSize>9pt</FontSize>
                             </Style>
@@ -1185,7 +1266,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.79503in</Width>
+              <Width>1.01378in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1234,7 +1315,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox47">
+                    <Textbox Name="Textbox37">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1250,7 +1331,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox47</rd:DefaultName>
+                      <rd:DefaultName>Textbox37</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1366,11 +1447,10 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1.28231in</Size>
+                <Size>1.43368in</Size>
                 <CellContents>
                   <Textbox Name="Description1">
                     <CanGrow>true</CanGrow>
-                    <CanShrink>true</CanShrink>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
@@ -1402,9 +1482,9 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>1.28231in</Size>
+                <Size>1.43368in</Size>
                 <CellContents>
-                  <Textbox Name="Textbox43">
+                  <Textbox Name="Textbox36">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -1420,7 +1500,7 @@
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox43</rd:DefaultName>
+                    <rd:DefaultName>Textbox36</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
@@ -1438,7 +1518,7 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>1.28231in</Size>
+                <Size>1.43368in</Size>
                 <CellContents>
                   <Textbox Name="Textbox45">
                     <CanGrow>true</CanGrow>
@@ -1474,91 +1554,23 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Misc</DataSetName>
-        <Top>4.75694in</Top>
+        <DataSetName>ExtraCharges</DataSetName>
+        <Top>4.70709in</Top>
         <Left>1.34474in</Left>
         <Height>1in</Height>
-        <Width>2.07734in</Width>
-        <ZIndex>8</ZIndex>
+        <Width>2.44746in</Width>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox7">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Label>Company</Label>
-                <Value />
-                <Style>
-                  <FontSize>9pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.8125in</Top>
-        <Left>2.62705in</Left>
-        <Height>0.26215in</Height>
-        <Width>0.79503in</Width>
-        <ZIndex>9</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>Orange</BackgroundColor>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox8">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Label>Company</Label>
-                <Value>TOTAL</Value>
-                <Style>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.8125in</Top>
-        <Left>1.34474in</Left>
-        <Height>0.26215in</Height>
-        <Width>1.12606in</Width>
-        <ZIndex>10</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
     </ReportItems>
     <Height>6.07465in</Height>
     <Style />
   </Body>
-  <Width>3.49012in</Width>
+  <Width>3.79708in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -1626,6 +1638,13 @@
       </ConnectionProperties>
       <rd:DataSourceID>10a0ce92-4df0-4e71-84c7-3f907a2deb4e</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="FirstAppFrameworkApplicationEntitiesReportClasses4">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>a41db2da-d6ff-4e8b-bed1-3aacb44bc7ce</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="Order">
@@ -1686,129 +1705,25 @@
         <rd:ObjectDataSourceType>FirstAppFrameworkApplicationEntities.ReportClasses.OrderReport+OrderDetailsReportDataLine, FirstAppFrameworkApplicationEntities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="Misc">
+    <DataSet Name="ExtraCharges">
       <Query>
-        <DataSourceName>FirstAppFrameworkApplicationEntitiesEntityClasses1</DataSourceName>
+        <DataSourceName>FirstAppFrameworkApplicationEntitiesReportClasses4</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="AllowUserChangePrimaryFieldValue">
-          <DataField>AllowUserChangePrimaryFieldValue</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
         <Field Name="Amount">
           <DataField>Amount</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Company">
-          <DataField>Company</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CreatedBy">
-          <DataField>CreatedBy</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CreatedDateTime">
-          <DataField>CreatedDateTime</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="CrossCompany">
-          <DataField>CrossCompany</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="DatabaseHandler">
-          <DataField>DatabaseHandler</DataField>
-          <rd:TypeName>AppFramework.AppClasses.DatabaseHandler</rd:TypeName>
-        </Field>
-        <Field Name="Deleted">
-          <DataField>Deleted</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
         <Field Name="Description">
           <DataField>Description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="IsTmpOnly">
-          <DataField>IsTmpOnly</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="LookupFields">
-          <DataField>LookupFields</DataField>
-          <rd:TypeName>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
-        </Field>
-        <Field Name="MainColumn">
-          <DataField>MainColumn</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ModifiedBy">
-          <DataField>ModifiedBy</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ModifiedDateTime">
-          <DataField>ModifiedDateTime</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="OrderID">
-          <DataField>OrderID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Permission">
-          <DataField>Permission</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RequiredLicense">
-          <DataField>RequiredLicense</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SafeCaption">
-          <DataField>SafeCaption</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SafeFormType">
-          <DataField>SafeFormType</DataField>
-          <rd:TypeName>System.Type</rd:TypeName>
-        </Field>
-        <Field Name="SafeListFormType">
-          <DataField>SafeListFormType</DataField>
-          <rd:TypeName>System.Type</rd:TypeName>
-        </Field>
-        <Field Name="SafeTitleColumn1">
-          <DataField>SafeTitleColumn1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SafeTitleColumn2">
-          <DataField>SafeTitleColumn2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TableInfo">
-          <DataField>TableInfo</DataField>
-          <rd:TypeName>AppFramework.AppClasses.TableInfo</rd:TypeName>
-        </Field>
-        <Field Name="TableName">
-          <DataField>TableName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TableType">
-          <DataField>TableType</DataField>
-          <rd:TypeName>AppFramework.AppClasses.TableType</rd:TypeName>
-        </Field>
-        <Field Name="Title">
-          <DataField>Title</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="UseVirtualDelete">
-          <DataField>UseVirtualDelete</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>FirstAppFrameworkApplicationEntities.EntityClasses</rd:DataSetName>
-        <rd:TableName>Total</rd:TableName>
-        <rd:ObjectDataSourceType>FirstAppFrameworkApplicationEntities.EntityClasses.Total, FirstAppFrameworkApplicationEntities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:DataSetName>FirstAppFrameworkApplicationEntities.ReportClasses</rd:DataSetName>
+        <rd:TableName>ExtraCharges</rd:TableName>
+        <rd:ObjectDataSourceType>FirstAppFrameworkApplicationEntities.ReportClasses.ExtraCharges, FirstAppFrameworkApplicationEntities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

@@ -46,14 +46,14 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
         protected override void setupEntityInfo()
         {
             FieldInfoList["OrderID"] = new FieldInfo(false, false, true, new OrderEDT());
-            FieldInfoList["CustomerID"] = new FieldInfo(true, false, true, "Customer", new CustomerEDT());
+            FieldInfoList["CustomerID"] = new FieldInfo(true, false, false, "Customer", new CustomerEDT());
             FieldInfoList["OrderStatus"] = new FieldInfo(false, false, false, new OrderStatusEDT());
             FieldInfoList["Amount"] = new FieldInfo(false, false, true, new AmountEDT());
 
             TableInfo.KeyInfoList["OrderID"] = new KeyInfo(KeyType.PrimaryField, "OrderID");
             TableInfo.KeyInfoList["CustomerID"] = new KeyInfo(KeyType.Key, "CustomerID");
 
-            FieldGroups["grid"] = new String[] { "OrderID", "CustomerID", /*"CreatedBy", "CreatedDateTime",*/ "OrderStatus", "Amount" };
+            //FieldGroups["grid"] = new String[] { "OrderID", "CustomerID", /*"CreatedBy", "CreatedDateTime",*/ "OrderStatus", "Amount" };
         }
         protected override long insert(bool forceWrite, bool callSaveMethod)
         {
@@ -66,7 +66,7 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
         protected override long update(bool forceWrite, bool callSaveMethod)
         {
             if (this.Amount < 0)
-                this.OrderStatus = EDTs.OrderStatus.OWING;
+                this.OrderStatus = EDTs.OrderStatus.OPEN;
             else if (this.Amount == 0)
                 this.OrderStatus = EDTs.OrderStatus.SETTLED;
             else if (this.Amount > 0)
@@ -81,9 +81,10 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
             var customer = (from c in new QueryableEntity<Customers>()
                         where c.CustomerID == this.CustomerID
                         select c).AppFirst();
-            customer.Money = this.Amount;
+            customer.Money -= TempMoney;
             customer.update();
         }
-                
+        
+        public decimal TempMoney { get; set; }
     }
 }

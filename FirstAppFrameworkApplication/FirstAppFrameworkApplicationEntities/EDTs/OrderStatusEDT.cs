@@ -38,7 +38,7 @@ namespace FirstAppFrameworkApplicationEntities.EDTs
     public enum OrderStatus
     {
         SETTLED,
-        OWING,
+        OPEN,
         NULL,
         OVERPAYED
     }
