@@ -246,6 +246,9 @@
     <EmbeddedResource Include="Forms\MiscCharges.resx">
       <DependentUpon>MiscCharges.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderDeductions.resx">
+      <DependentUpon>OrderDeductions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +303,7 @@
     <None Include="bin\Debug\serverconfig.cfg" />
     <None Include="Properties\DataSources\FirstAppFrameworkApplicationEntities.EntityClasses.InvoiceDetails.datasource" />
     <None Include="Properties\DataSources\FirstAppFrameworkApplicationEntities.EntityClasses.Total.datasource" />
+    <None Include="Properties\DataSources\FirstAppFrameworkApplicationEntities.ReportClasses.ExtraCharges.datasource" />
     <None Include="Properties\DataSources\FirstAppFrameworkApplicationEntities.ReportClasses.InvoiceReport+InvoiceReportDataLine.datasource" />
     <None Include="Properties\DataSources\FirstAppFrameworkApplicationEntities.ReportClasses.OrderReport+ExtraCharges.datasource" />
     <None Include="Properties\DataSources\FirstAppFrameworkApplicationEntities.ReportClasses.OrderReport+OrderDetailsReportDataLine.datasource" />

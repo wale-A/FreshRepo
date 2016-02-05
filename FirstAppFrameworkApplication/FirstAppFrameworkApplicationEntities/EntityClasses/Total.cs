@@ -44,13 +44,20 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
         protected override void setupEntityInfo()
         {
             FieldInfoList["OrderID"] = new FieldInfo(false, false, true, new OrderEDT());
+            //FieldInfoList["MiscChargeID"] = new FieldInfo(true, false, true, new MiscChargeEDT());
             FieldInfoList["Description"] = new FieldInfo(false, false, true, new ShortDescriptionEDT());
             FieldInfoList["Amount"] = new FieldInfo(false, false, true, new AmountEDT());
 
             TableInfo.KeyInfoList["OrderID"] = new KeyInfo(KeyType.Key, "OrderID");
+            //TableInfo.KeyInfoList["MiscChargeID"] = new KeyInfo(KeyType.Key, "MiscChargeID");
             TableInfo.KeyInfoList["PrimaryKey"] = new KeyInfo(KeyType.PrimaryField, "OrderID", "Description", "Amount");
 
-            FieldGroups["grid"] = new String[] { "OrderID", "Description", "CreatedBy", "CreatedDateTime", "Amount"};
+            FieldGroups["grid"] = new String[] { "OrderID", "Description", "CreatedBy", "CreatedDateTime", "Amount" };
+        }
+
+        protected override long insert(bool forceWrite, bool callSaveMethod)
+        {
+            return base.insert(forceWrite, callSaveMethod);
         }
     }
 }

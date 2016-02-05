@@ -302,7 +302,7 @@
         <DataSetName>paymentData</DataSetName>
         <Top>1.00049in</Top>
         <Height>0.375in</Height>
-        <Width>2.23486in</Width>
+        <Width>2.23487in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -364,7 +364,7 @@
                             <TextRun>
                               <Value>=Fields!amountPaid.Value</Value>
                               <Style>
-                                <Format>'₦'0.00;('₦'0.00)</Format>
+                                <Format>'₦' #,0.00;('₦' #,0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -405,7 +405,7 @@
         <DataSetName>paymentData</DataSetName>
         <Top>0.77306in</Top>
         <Height>0.22743in</Height>
-        <Width>2.23486in</Width>
+        <Width>2.23487in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>

@@ -72,14 +72,10 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
                              where o.OrderID == this.OrderID
                              select o).AppFirst();
                 order.Amount -= this.Amount;
+                order.TempMoney = this.Amount;
                 order.update();
                 item.update();
-
-                var category = (from itemCategory in new QueryableEntity<ItemCategory>() where itemCategory.ItemCategoryID == this.ItemCategoryID select itemCategory).AppFirst();
-                var itemQuantity = (from i in new QueryableEntity<Items>() where i.ItemID == this.ItemID select i.ItemQuantity).ToList();
-                category.ItemQuantity -= this.Quantity;
-                category.update();
-
+                                
                 computeMiscChargesForItem();
                 return base.insert(forceWrite, callSaveMethod);
             }
@@ -93,9 +89,73 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
                              where d.Default == true
                              orderby d.ChargeOrder
                              select d).ToList();
-            //var item = (from i in new QueryableEntity<Items>()
-            //            where i.ItemID == this.ItemID
-            //            select i).AppFirst();
+            MiscCharge tempD = null;
+            foreach (var d in deduction)
+            {
+                if (tempD == null)
+                    tempD = d;
+                if (tempD.ChargeOrder == d.ChargeOrder)
+                    TempValue = Amount;
+                else if (tempD.ChargeOrder <= d.ChargeOrder)
+                {
+                    tempD = d;
+                    TempValue = Amount + ExtraCharge;
+                }
+
+                if (d.DeductionType == DeductionType.Fixed)
+                    ExtraCharge = d.Value;
+                else if (d.DeductionType == DeductionType.Percentage)
+                    ExtraCharge = (TempValue * d.Value) / 100;
+
+                var orderMiscCharge = (from o in new QueryableEntity<OrderMiscCharges>()
+                                       where o.OrderID == this.OrderID && o.MiscChargeID == d.DeductionID
+                                       select o).AppFirst();
+                if (orderMiscCharge == null)
+                {
+                   orderMiscCharge = new OrderMiscCharges
+                    {
+                        OrderID = this.OrderID,
+                        Amount = ExtraCharge,
+                        MiscChargeID = d.DeductionID,
+                        ItemID = this.ItemID
+                    };
+                   orderMiscCharge.insert();
+                }                
+                else
+                {
+                    orderMiscCharge.Amount += ExtraCharge;
+                    orderMiscCharge.TempMoney = ExtraCharge;
+                    orderMiscCharge.update();
+                }
+            }
+        }
+
+        public decimal TempValue { get; set; }
+        public decimal ExtraCharge { get; set; }
+
+        public override long delete(bool forceWrite)
+        {            
+            //var category = (from itemCategory in new QueryableEntity<ItemCategory>() where itemCategory.ItemCategoryID == this.ItemCategoryID select itemCategory).AppFirst();
+            //var itemQuantity = (from i in new QueryableEntity<Items>() where i.ItemID == this.ItemID select i.ItemQuantity).ToList();
+            //category.ItemQuantity += this.Quantity;
+            //category.update();
+            var item = (from i in new QueryableEntity<Items>()
+                        where i.ItemID == this.ItemID
+                        select i).AppFirst();
+            item.ItemQuantity += this.Quantity;
+            item.update();
+
+            removeMiscChargesForItem();
+            return base.delete(forceWrite);
+        }
+
+        private void removeMiscChargesForItem()
+        {           
+            var deduction = (from d in new QueryableEntity<MiscCharge>()
+                             where d.Default == true
+                             orderby d.ChargeOrder
+                             select d).ToList();
+            
             MiscCharge tempD = new MiscCharge();
             foreach (var d in deduction)
             {
@@ -114,45 +174,12 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
                 else if (d.DeductionType == DeductionType.Percentage)
                     ExtraCharge = (TempValue * d.Value) / 100;
 
-                OrderMiscCharges omc = new OrderMiscCharges
-                {
-                    OrderID = this.OrderID,
-                    Amount = ExtraCharge,
-                    MiscChargeID = d.DeductionID,
-                    ItemID = this.ItemID
-                };
-                omc.insert();
-            }
-        }
-
-        public decimal TempValue { get; set; }
-        public decimal ExtraCharge { get; set; }
-
-        public override long delete(bool forceWrite)
-        {
-            var item = (from i in new QueryableEntity<Items>()
-                        where i.ItemID == this.ItemID
-                        select i).AppFirst();
-            item.ItemQuantity += this.Quantity;
-            item.update();
-
-            var category = (from itemCategory in new QueryableEntity<ItemCategory>() where itemCategory.ItemCategoryID == this.ItemCategoryID select itemCategory).AppFirst();
-            var itemQuantity = (from i in new QueryableEntity<Items>() where i.ItemID == this.ItemID select i.ItemQuantity).ToList();
-            category.ItemQuantity += this.Quantity;
-            category.update();
-
-            return base.delete(forceWrite);
-        }
-
-        private void removeMiscChargesForItem()
-        {
-            var orderMiscCharge = (from omc in new QueryableEntity<OrderMiscCharges>()
-                       where omc.ItemID == this.ItemID
-                       select omc).ToList();
-            
-            foreach (var omc in orderMiscCharge)
-            {
-                omc.delete();
+                var orderMiscCharge = (from o in new QueryableEntity<OrderMiscCharges>()
+                                       where o.OrderID == this.OrderID && o.MiscChargeID == d.DeductionID
+                                       select o).AppFirst();
+                orderMiscCharge.Amount -= ExtraCharge;
+                orderMiscCharge.TempMoney = -ExtraCharge;
+                orderMiscCharge.update();
             }
         }
          

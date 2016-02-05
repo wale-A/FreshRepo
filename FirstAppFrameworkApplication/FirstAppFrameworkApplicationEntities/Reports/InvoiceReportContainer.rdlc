@@ -28,7 +28,6 @@
                         </Border>
                       </Style>
                     </Subreport>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -113,13 +112,6 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <ReportParameters>
-    <ReportParameter Name="OrderID">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-  </ReportParameters>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>d94beea7-d312-4896-aeed-b1f952ce49c8</rd:ReportID>
 </Report>
