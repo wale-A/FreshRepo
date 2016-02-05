@@ -43,7 +43,7 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
         protected override void setupEntityInfo()
         {
             FieldInfoList["ItemCategoryID"] = new FieldInfo(true, false, true, new ItemCategoryEDT());
-            FieldInfoList["ItemQuantity"] = new FieldInfo(false, false, false, "Quantity", FormDataType.Integer);
+            //FieldInfoList["ItemQuantity"] = new FieldInfo(false, false, false, "Quantity", FormDataType.Integer);
             FieldInfoList["ItemCategoryName"] = new FieldInfo(true, true, true, "Category Name", FormDataType.String);
 
             TableInfo.KeyInfoList["ItemCategoryID"] = new KeyInfo(KeyType.PrimaryField, "ItemCategoryID");
@@ -53,7 +53,7 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
         protected override long insert(bool forceWrite, bool callSaveMethod)
         {
             //this.ItemCategoryID = AppFramework.AppClasses.AppEntities.NumberSequences.getNumber("ItemTypeIDSequence");
-            this.ItemQuantity = 0;
+            //this.ItemQuantity = 0;
 
             return base.insert(forceWrite, callSaveMethod);
         }

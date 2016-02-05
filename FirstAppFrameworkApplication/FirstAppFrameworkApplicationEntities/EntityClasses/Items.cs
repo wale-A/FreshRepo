@@ -60,9 +60,9 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
         {            
             this.ItemID = AppFramework.AppClasses.AppEntities.NumberSequences.getNumber("ItemIDSequence");
 
-            var category = (from itemCategory in new QueryableEntity<ItemCategory>() where itemCategory.ItemCategoryID == this.ItemCategoryID select itemCategory).AppFirst();
-            category.ItemQuantity += this.ItemQuantity;
-            category.update();
+            //var category = (from itemCategory in new QueryableEntity<ItemCategory>() where itemCategory.ItemCategoryID == this.ItemCategoryID select itemCategory).AppFirst();
+            //category.ItemQuantity += this.ItemQuantity;
+            //category.update();
 
             return base.insert(forceWrite, callSaveMethod);
         }
@@ -71,9 +71,9 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
         {
             var quantity = (from item in new QueryableEntity<Items>() where item.ItemID == this.ItemID select item.ItemQuantity).ToList();
 
-            var category = (from itemCategory in new QueryableEntity<ItemCategory>() where itemCategory.ItemCategoryID == this.ItemCategoryID select itemCategory).AppFirst();
-            category.ItemQuantity += (this.ItemQuantity - quantity[0]);
-            category.update();
+            //var category = (from itemCategory in new QueryableEntity<ItemCategory>() where itemCategory.ItemCategoryID == this.ItemCategoryID select itemCategory).AppFirst();
+            //category.ItemQuantity += (this.ItemQuantity - quantity[0]);
+            //category.update();
 
             return base.update(forceWrite, callSaveMethod);
         }
@@ -82,9 +82,9 @@ namespace FirstAppFrameworkApplicationEntities.EntityClasses
         {
             var quantity = (from item in new QueryableEntity<Items>() where item.ItemID == this.ItemID select item.ItemQuantity).ToList();
 
-            var category = (from itemCategory in new QueryableEntity<ItemCategory>() where itemCategory.ItemCategoryID == this.ItemCategoryID select itemCategory).AppFirst();
-            category.ItemQuantity -= quantity[0];
-            category.update();
+            //var category = (from itemCategory in new QueryableEntity<ItemCategory>() where itemCategory.ItemCategoryID == this.ItemCategoryID select itemCategory).AppFirst();
+            //category.ItemQuantity -= quantity[0];
+            //category.update();
 
             return base.delete(forceWrite);
         }
